@@ -1,67 +1,190 @@
-<!DOCTYPE html>
-<html>
+<html><head><style type="text/css">#button {
+  display:none;
+}
+.imgb_vis {
+  animation: imgb-animation 7s linear;
+}
+@keyframes imgb-animation {
+  10% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(100px);
+  }
+  90% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}</style></head><body><module>
+<moduleprefs title="Google.com">
+<content type="html"><!--[CDATA[
+
+
+<html-->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amazing6ox/okimfine@main/TemplateData/style.css">
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      #gameContainer {
+        width: 100vw;
+        height: 100vh;
+        background: black;
+      }
+    </style>
+    <script src="https://www.id.net/api/user_data/autologin?callback=idnet_autologin&amp;app_id=560525efbbddbd13cb000e0d"></script><script src="https://cdn.jsdelivr.net/gh/amazing6ox/okimfine@main/TemplateData/UnityProgress.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/amazing6ox/okimfine@main/Build/UnityLoader.js"></script>
     <script>
-        if (window.parent !== window.self) window.parent.postMessage("bonk", "*");
-        window.addEventListener("DOMContentLoaded", function () {
-            document.body.style.margin = "0";
-            document.body.style.height = "100vh";
-            document.body.style.overflow = "hidden";
-        });
+      var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/amazing6ox/okimfine@main/Build/death_run_wasm_v1.json", {
+        onProgress: UnityProgress,
+        Module: {
+          onRuntimeInitialized: function () {
+            UnityProgress(gameInstance, "complete");
+          },
+        },
+      });
     </script>
-    <html lang="en-us">
-        <head>
-            <meta charset="utf-8" />
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <title>Death Run 3D | BBC Unblocked Games</title>
-            <link href="shared/style.css" rel="stylesheet" />
-            <link rel="stylesheet" href="TemplateData56/style.css" />
-            <script src="TemplateData56/UnityProgress.js"></script>
-            <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-            <script src="Build/UnityLoader.js"></script>
-            <script src="/js/main.js"></script>
-            <script>
-                window.rWS = WebSocket;
-                WebSocket = function (url, options) {
-                    var split = url.split("://");
-                    var prefix = "";
-                    switch (split[0].toLowerCase()) {
-                        case "ws":
-                            prefix = "wss://onebigorange-tmm.tbt.mx/websocket/http://";
-                            break;
-                        case "wss":
-                            prefix = "wss://onebigorange-tmm.tbt.mx/websocket/https://";
-                            break;
-                        default:
-                            prefix = split[0];
-                    }
-                    return new (Function.prototype.bind.call(
-                        window.rWS,
-                        null,
-                        (split[1].match(/\//g) || []).length === 0 ? (split[1].includes("?") ? prefix + split[1].replace("?", "/?") : prefix + split[1] + "/") : prefix + split[1],
-                        options
-                    ))();
-                };
-                var origOpen = XMLHttpRequest.prototype.open;
-                XMLHttpRequest.prototype.open = function (...args) {
-                    args[1] = /^http/.test(args[1]) ? "https://onebigstatic-tmm.tbt.mx/static/" + args[1] : args[1];
-                    origOpen.apply(this, args);
-                };
-                var gameInstance = UnityLoader.instantiate("gameContainer", "Build/death_run_wasm_v1.json", {
-                    onProgress: UnityProgress,
-                    Module: {
-                        onRuntimeInitialized: function () {
-                            UnityProgress(gameInstance, "complete");
-                        },
-                    },
-                });
-            </script>
-            <script src="shared/lib.js" type="text/javascript"></script>
-            <script src="shared/gamebreak/gamebreak.js" type="text/javascript"></script>
-        </head>
-        <body>
-            <div class="webgl-content">
-                <div id="gameContainer" style="width: 100vw; height: 100vh;"></div>
-            </div>
-        </body>
-    </html>
-</html>
+    <script src="https://cdn.jsdelivr.net/gh/amazing6ox/okimfine@main/api.js"></script>
+    <style type="text/css">
+      #button {
+        display: none;
+      }
+      .imgb_vis {
+        animation: imgb-animation 7s linear;
+      }
+      @keyframes imgb-animation {
+        10% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(100px);
+        }
+        90% {
+          transform: translateX(100px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  
+  
+    <div id="gameContainer" style="padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);"><canvas id="#canvas" width="871" height="871" style="cursor: default;"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+
+<!-- Sticky Bottom Center Ad (728x90) with Smooth Slide-Out and Reappearance -->
+<style>
+  /* Container: Bottom center, fixed, with overflow hidden */
+  #ad-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(728px, calc(100% - 20px)); /* 728px, 10px margin on mobile */
+    height: 90px;
+    background: rgba(0, 0, 0, 0.90);
+    display: none;
+    z-index: 99999;
+    border-radius: 0; /* Sharp corners */
+    overflow: hidden;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.45);
+    box-sizing: border-box;
+    transition: transform 0.5s ease-in-out; /* Smooth slide-in/out animation */
+  }
+
+  /* Slide-out animation */
+  #ad-container.hidden {
+    transform: translate(-50%, 100%); /* Slide down out of view */
+  }
+
+  #ad-iframe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 745px; /* Updated width */
+    height: 90px; /* Updated height */
+    border: 0;
+    display: block;
+    overflow: hidden;
+    pointer-events: auto;
+    box-sizing: content-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  #ad-iframe::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* Close button with arrow */
+  #close-ad {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 5px 9px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    opacity: 0.72;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+  }
+  #close-ad.enabled {
+    cursor: pointer;
+    opacity: 1;
+  }
+  #close-ad::before {
+    content: '↓'; /* Down arrow for bottom ad */
+    margin-right: 4px;
+  }
+
+  /* Right mask for scrollbar */
+  #ad-right-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    z-index: 99999;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 440px) {
+    #ad-container {
+      width: calc(100% - 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 0; /* Sharp corners on mobile */
+    }
+    #ad-iframe {
+      width: 728px;
+    }
+  }
+</style>
+
+
+  
+
+
+
+
+
+
+
+
+
+]]&gt;</content>
+</moduleprefs></module><div id="button" class="imgb imgb_vis" style="position: fixed; top: 10%; left: -100px; z-index: 10; display: none;"><a target="_blank" href="https://sites.google.com/view/classroom6x/" title="More Unblocked Games 6x"><img src="https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg" width="100" height="30" style="cursor:pointer;" alt="More of best Classroom 6x Unblocked Games"></a></div><script src="blob:https://95192778-atari-embeds.googleusercontent.com/5977b6d4-d9c1-41ca-bb61-719f34ee0bc8"></script></body></html>
